@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://ALPHAONE\\SQLEXPRESS:55054;databaseName=Ha;schema=Company;encrypt=true;trustServerCertificate=true;
+    username: hakim
+    password: hakim
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        default_schema: Company
+        format_sql: true
+    show-sql: true

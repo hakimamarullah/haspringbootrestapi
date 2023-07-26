@@ -11,82 +11,31 @@ Version 1.0
 */
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.Date;
 
+@Entity
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
-    private String Id;
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
+    @jakarta.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
+    private Long id;
     private String firstName;
     private String lastName;
     private Date birthDay;
     private String email;
     private String phone;
+    @ManyToOne
+    @JoinColumn(name = "department_id")
     @JsonIgnoreProperties("employees")
     private Department department;
 
-    public Employee(String id, String firstName, String lastName, Date birthDay, String email, String phone, Department department) {
-        Id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDay = birthDay;
-        this.email = email;
-        this.phone = phone;
-        this.department = department;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Date getBirthDay() {
-        return birthDay;
-    }
-
-    public void setBirthDay(Date birthDay) {
-        this.birthDay = birthDay;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
-    }
 }
