@@ -12,7 +12,7 @@ Version 1.0
 
 import com.juaracoding.haspringbootrestapi.model.Department;
 import com.juaracoding.haspringbootrestapi.model.Employee;
-import com.juaracoding.haspringbootrestapi.model.dto.EmployeeDTO;
+import com.juaracoding.haspringbootrestapi.dto.EmployeeDTO;
 import com.juaracoding.haspringbootrestapi.repository.DepartmentRepository;
 import com.juaracoding.haspringbootrestapi.repository.EmployeeRepository;
 import com.juaracoding.haspringbootrestapi.service.EmployeeService;

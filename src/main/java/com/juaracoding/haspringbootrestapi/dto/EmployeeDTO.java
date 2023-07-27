@@ -1,4 +1,4 @@
-package com.juaracoding.haspringbootrestapi.model.dto;
+package com.juaracoding.haspringbootrestapi.dto;
 /*
 IntelliJ IDEA 2022.2.2 (Community Edition)
 Build #IC-222.4167.29, built on September 13, 2022

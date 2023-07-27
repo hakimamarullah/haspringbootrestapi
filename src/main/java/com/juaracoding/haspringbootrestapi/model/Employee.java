@@ -22,9 +22,8 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Employee {
-    @Getter(AccessLevel.NONE)
-    @Setter(AccessLevel.NONE)
-    @jakarta.persistence.Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;

@@ -11,7 +11,7 @@ Version 1.0
 */
 
 import com.juaracoding.haspringbootrestapi.model.Department;
-import com.juaracoding.haspringbootrestapi.model.dto.DepartmentDTO;
+import com.juaracoding.haspringbootrestapi.dto.DepartmentDTO;
 
 import java.util.List;
 

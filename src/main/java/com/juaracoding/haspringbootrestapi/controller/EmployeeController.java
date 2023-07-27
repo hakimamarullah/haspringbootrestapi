@@ -11,7 +11,7 @@ Version 1.0
 */
 
 import com.juaracoding.haspringbootrestapi.model.Employee;
-import com.juaracoding.haspringbootrestapi.model.dto.EmployeeDTO;
+import com.juaracoding.haspringbootrestapi.dto.EmployeeDTO;
 import com.juaracoding.haspringbootrestapi.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

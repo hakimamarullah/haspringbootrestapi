@@ -11,7 +11,7 @@ Version 1.0
 */
 
 import com.juaracoding.haspringbootrestapi.model.Department;
-import com.juaracoding.haspringbootrestapi.model.dto.DepartmentDTO;
+import com.juaracoding.haspringbootrestapi.dto.DepartmentDTO;
 import com.juaracoding.haspringbootrestapi.repository.DepartmentRepository;
 import com.juaracoding.haspringbootrestapi.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DepartmentServiceImpl implements DepartmentService {
+public class DepartmentServiceImpl implements DepartmentService{
     @Autowired
     private DepartmentRepository departmentRepository;
 
