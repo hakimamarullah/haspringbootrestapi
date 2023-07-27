@@ -10,18 +10,17 @@ Created on 7/24/2023 9:07 PM
 Version 1.0
 */
 
+import com.juaracoding.haspringbootrestapi.model.Department;
 import com.juaracoding.haspringbootrestapi.model.dto.DepartmentDTO;
 import com.juaracoding.haspringbootrestapi.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -39,5 +38,10 @@ public class DepartmentController {
         res.put("data", departmentService.addDepartment(departmentDTO));
 
         return new ResponseEntity<>(res,HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Department>> getAllDepartment() {
+        return ResponseEntity.ok(departmentService.getAllDepartment());
     }
 }

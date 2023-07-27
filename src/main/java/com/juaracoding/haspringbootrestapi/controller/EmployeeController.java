@@ -17,12 +17,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -31,7 +29,10 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-
+    @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Employee>> getAllEmployees() {
+        return ResponseEntity.ok(employeeService.getAllEmployee());
+    }
     @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, Object>> createEmployee(@RequestBody final EmployeeDTO employeeDTO){
         Map<String, Object> res = new HashMap<>();
@@ -48,5 +49,10 @@ public class EmployeeController {
             return new ResponseEntity<>(res, HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>(res,HttpStatus.CREATED);
+    }
+
+    @GetMapping(value = "/search-by-name", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Employee>> searchEmployeeByFirstName(@RequestParam(value = "firstName") String firstName) {
+        return ResponseEntity.ok(employeeService.findEmployeeByFirstNameContains(firstName));
     }
 }

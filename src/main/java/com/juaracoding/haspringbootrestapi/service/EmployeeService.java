@@ -13,6 +13,10 @@ Version 1.0
 import com.juaracoding.haspringbootrestapi.model.Employee;
 import com.juaracoding.haspringbootrestapi.model.dto.EmployeeDTO;
 
+import java.util.List;
+
 public interface EmployeeService {
     Employee addEmployee(EmployeeDTO employeeDTO) throws Exception;
+    List<Employee> findEmployeeByFirstNameContains(String firstName);
+    List<Employee> getAllEmployee();
 }

@@ -13,6 +13,9 @@ Version 1.0
 import com.juaracoding.haspringbootrestapi.model.Department;
 import com.juaracoding.haspringbootrestapi.model.dto.DepartmentDTO;
 
+import java.util.List;
+
 public interface DepartmentService {
     Department addDepartment(DepartmentDTO departmentDTO);
+    List<Department> getAllDepartment();
 }
