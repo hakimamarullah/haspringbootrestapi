@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:sqlserver://ALPHAONE\\SQLEXPRESS:55054;databaseName=Ha;schema=Company;encrypt=true;trustServerCertificate=true;
     username: hakim
-    password: hakim
+    password: 29fd98b9c9d2abdd6a65b3b779456239
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     hibernate:
