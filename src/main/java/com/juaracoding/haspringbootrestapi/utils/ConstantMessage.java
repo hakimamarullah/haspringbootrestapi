@@ -30,6 +30,8 @@ public class ConstantMessage {
     public final static String ERROR_INTERNAL_SERVER = "INTERNAL SERVER ERROR";
     public final static String ERROR_MAIL_FORM_JSON = "Malformed JSON request";
 
+    public final static  String ERROR_FAILED_CREATED = "Error created";
+    public static final String SUCCESS_CREATED = "Data created successfully";
 
 }
 

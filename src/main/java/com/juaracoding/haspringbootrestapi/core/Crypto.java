@@ -64,7 +64,7 @@ public class Crypto {
 
     public static void main(String[] args) {
 
-        String strToEncrypt = "hakim";//put text to encrypt in here
+        String strToEncrypt = "rlwczixahupqqbza";//put text to encrypt in here
         String encryptionResult = Crypto.performEncrypt(strToEncrypt);
         System.out.println("Encryption Result : "+encryptionResult);
 

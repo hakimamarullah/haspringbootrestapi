@@ -11,12 +11,10 @@ Version 1.0
 */
 
 
+import com.juaracoding.haspringbootrestapi.core.SMTPCore;
 import com.juaracoding.haspringbootrestapi.service.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -36,5 +34,12 @@ public class HelloController {
         } catch (IOException ioe){
             return String.format("Failed to upload files %s", ioe.getMessage());
         }
+    }
+
+    @GetMapping(value = "/{message}")
+    public String sendEmail(@PathVariable(value = "message") String message) {
+        SMTPCore smtpCore = new SMTPCore();
+        smtpCore.sendSimpleMail(new String[]{"hakim.amarullah@ui.ac.id"}, "Test Mailer", message,"");
+        return "Mail Sent!";
     }
 }
